@@ -71,9 +71,9 @@ byDateData<-activityData %>%
      filter(is.na(steps)==FALSE)
 
 #generate hisotgram
-ggplot(byDateData, aes(x=date, y=steps)) +
-     geom_col() +
-     labs(title = "steps by day", y="sum of steps")
+ggplot(byDateData, aes(x=steps)) +
+     geom_histogram(bins=11) +
+     labs(title = "steps histogram", y="days")
 ```
 
 ![](markdownassign1_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
@@ -155,9 +155,9 @@ byDateImpData<-impData %>%
      summarize(steps= sum(steps))
 
 #plot sum of steps by date
-ggplot(byDateImpData, aes(x=date, y=steps)) +
-     geom_col() + 
-     labs(title = "Imputed steps by day", y="sum of steps")
+ggplot(byDateImpData, aes(x=steps)) +
+     geom_histogram(bins=11) +
+     labs(title = "imputed data steps histogram", y="days")
 ```
 
 ![](markdownassign1_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
